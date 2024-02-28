@@ -87,26 +87,68 @@
 
 // -------------- METHOD CHAINING ------------------
 
-//first without method chaining
+//first without method chaning
 
- let username = window.prompt("Enter your user name:");
+// let username = window.prompt("Enter your user name:"); 
 
-// username = username.trim(); //to remove the whitespace
+//  username = username.trim(); //to remove the whitespace
 
-// let letter = username.charAt(0);
+//  let letter = username.charAt(0);
 
 // letter = letter.toUpperCase();
 
 // let remaning = username.slice(1);
-
 // remaning = remaning.toLowerCase();
+
 // let all = letter + remaning;
 // console.log(all);
 
 // ------- With Method Chaining ----------
 
-username =
-  username.trim().charAt(0).toUpperCase() +
-  username.trim().slice(1).toLowerCase();
+// username =
 
-console.log(username);
+
+//   username.trim().charAt(0).toUpperCase() +
+
+//   username.trim().slice(1).toLowerCase();
+
+// console.log(username);
+
+
+
+// ----------- Number Guessing Game ---------------
+
+const minNumber = 1;
+const maxNumber = 100;
+
+const answer = Math.floor(Math.random() * (maxNumber - minNumber + 1))+minNumber;
+
+let attempts = 0;
+let guess;
+let running = true;
+
+while(running){
+    
+    guess = window.prompt(`Enter a number between ${minNumber} and ${maxNumber}:`);
+    guess = Number(guess);
+    if(isNaN(guess)){
+        window.alert("Please enter a valid Number");
+    
+    }else if(guess < minNumber || guess > maxNumber){
+        window.alert("Please enter a valid Number")
+    }
+    else{
+        attempts++;
+
+        if(guess < answer){
+            window.alert("TOO LOW! TRY AGAIN");
+        }
+        else if(guess > answer){
+            window.alert("TOO HIGH! TRY AGAIN");
+        }
+        else{
+            window.alert(`CORRECT! The answer was ${answer}, It took you ${attempts} attempts`);
+            running = false;
+        }
+    }
+}
