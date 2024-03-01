@@ -89,7 +89,7 @@
 
 //first without method chaning
 
-// let username = window.prompt("Enter your user name:"); 
+// let username = window.prompt("Enter your user name:");
 
 //  username = username.trim(); //to remove the whitespace
 
@@ -107,48 +107,74 @@
 
 // username =
 
-
 //   username.trim().charAt(0).toUpperCase() +
 
 //   username.trim().slice(1).toLowerCase();
 
 // console.log(username);
 
-
-
 // ----------- Number Guessing Game ---------------
-
+/*
 const minNumber = 1;
 const maxNumber = 100;
 
-const answer = Math.floor(Math.random() * (maxNumber - minNumber + 1))+minNumber;
+const answer =
+  Math.floor(Math.random() * (maxNumber - minNumber + 1)) + minNumber;
 
 let attempts = 0;
 let guess;
 let running = true;
 
-while(running){
-    
-    guess = window.prompt(`Enter a number between ${minNumber} and ${maxNumber}:`);
+while (running) {
+    guess = window.prompt(`Guess a number between ${minNumber} and ${maxNumber}:`);
     guess = Number(guess);
-    if(isNaN(guess)){
-        window.alert("Please enter a valid Number");
-    
-    }else if(guess < minNumber || guess > maxNumber){
-        window.alert("Please enter a valid Number")
-    }
-    else{
-        attempts++;
 
+    if(guess < minNumber || guess > maxNumber){
+        window.alert(`Please enter a valid number`);
+    }else if(isNaN(guess)){
+        window.alert(`Please enter a valid number`);
+    }else {
+        attempts++;
         if(guess < answer){
-            window.alert("TOO LOW! TRY AGAIN");
-        }
-        else if(guess > answer){
-            window.alert("TOO HIGH! TRY AGAIN");
-        }
-        else{
-            window.alert(`CORRECT! The answer was ${answer}, It took you ${attempts} attempts`);
+            window.alert(`TOO SMALL! GUESS AGAIN`);
+        }else if(guess > answer){
+            window.alert(`TOO HIGH! GUESS AGAIN`);
+        }else{
+            window.alert(`You are correct the number was ${answer}, It took you ${attempts} attempts`);
             running = false;
         }
     }
+
 }
+*/
+
+
+//-----------------------------------------Draft------------------------------------------------
+
+
+
+// while(running){
+
+//     guess = window.prompt(`Enter a number between ${minNumber} and ${maxNumber}:`);
+//     guess = Number(guess);
+//     if(isNaN(guess)){
+//         window.alert("Please enter a valid Number");
+
+//     }else if(guess < minNumber || guess > maxNumber){
+//         window.alert("Please enter a valid Number")
+//     }
+//     else{
+//         attempts++;
+
+//         if(guess < answer){
+//             window.alert("TOO LOW! TRY AGAIN");
+//         }
+//         else if(guess > answer){
+//             window.alert("TOO HIGH! TRY AGAIN");
+//         }
+//         else{
+//             window.alert(`CORRECT! The answer was ${answer}, It took you ${attempts} attempts`);
+//             running = false;
+//         }
+//     }
+// }

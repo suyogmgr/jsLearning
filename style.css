@@ -26,5 +26,31 @@
     background-color: hsl(223, 74%, 37%);
 } */
 
-/*Fourth project*/
+/*Temperature Converter*/
 
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: hsl(193, 66%, 89%);
+}
+
+h1{
+    color: hsl(240, 60%, 68%);
+}
+
+form{
+    text-align: center;
+    margin: auto;
+    background-color: hsl(190, 66%, 72%);
+    max-width: 300px;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 20px hsl(228, 86%, 31%);
+}
+
+#display-box{
+    width: 50%;
+    font-size: 1.5rem;
+    text-align: center;
+    border: solid 2px hsl(228, 84%, 20%);
+    border-radius: 5px;
+}

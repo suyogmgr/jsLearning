@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <title>Document</title>
   </head>
   <body>
@@ -15,8 +15,6 @@
     <button id="myBtn">Submit</button>
 
     <h3 id="answer"></h3> -->
-
-
 
     <!-- second project 
     <label id="display">0</label> <br>
@@ -42,6 +40,18 @@
     <p id="checkResult"></p><br>
     <p id="radioResult"></p> -->
 
-    <script src="script.js"></script>
+    <!--Temperature converting machine-->
+
+    <form>
+      <h1 id="title-id">Temperature Converter:</h1>
+      <input id="display-box" type="text" value="0" /><br />
+      <input id="Cel-F" type="radio" name="temp" />
+      <label for="Cel-F" id="toFarenheit">Celsius --> Farenheit</label><br />
+      <input type="radio" id="F-Cel" name="temp" />
+      <label for="F-Cel" id="toCelsius">Farenheit --> Celsius</label><br />
+      <button type="button" id="submitBtn" onclick="">Submit</button>
+      <h3>Select a Unit</h3>
+      <script src="script.js"></script>
+    </form>
   </body>
 </html>
