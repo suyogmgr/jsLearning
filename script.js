@@ -148,10 +148,7 @@ while (running) {
 }
 */
 
-
 //-----------------------------------------Draft------------------------------------------------
-
-
 
 // while(running){
 
@@ -178,3 +175,32 @@ while (running) {
 //         }
 //     }
 // }
+
+// ---------------- Temperature Converter --------------------
+
+const toFarenheit = document.getElementById("toFarenheit");
+const toCelsius = document.getElementById("toCelsius");
+const answer = document.getElementById("result");
+const display = document.getElementById("display-box");
+
+let temp;
+
+function convert() {
+    
+  if (toFarenheit.checked) {
+    temp = Number(display.value);
+    temp = temp * 9 / 5 + 32;
+    answer.textContent = temp.toFixed(1) + "°F";
+    console.log("F");
+  } 
+  else if (toCelsius.checked) {
+    temp = Number(display.value);
+    temp = (temp - 32) * (5/9);
+    answer.textContent = temp.toFixed(1) + "°C";
+    console.log("C");
+  } 
+  else {
+    answer.textContent = "Select a Unit";
+    console.log("check");
+  }
+}

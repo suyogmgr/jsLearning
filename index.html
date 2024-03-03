@@ -44,14 +44,14 @@
 
     <form>
       <h1 id="title-id">Temperature Converter:</h1>
-      <input id="display-box" type="text" value="0" /><br />
-      <input id="Cel-F" type="radio" name="temp" />
-      <label for="Cel-F" id="toFarenheit">Celsius --> Farenheit</label><br />
-      <input type="radio" id="F-Cel" name="temp" />
-      <label for="F-Cel" id="toCelsius">Farenheit --> Celsius</label><br />
-      <button type="button" id="submitBtn" onclick="">Submit</button>
-      <h3>Select a Unit</h3>
-      <script src="script.js"></script>
+      <input id="display-box" type="text" value="0"/><br />
+      <input id="toFarenheit" type="radio" name="temp" />
+      <label for="toFarenheit" >Celsius -> Farenheit</label><br />
+      <input type="radio" id="toCelsius" name="temp" />
+      <label for="toCelsius">Farenheit -> Celsius</label><br />
+      <button type="button" id="submitBtn" onclick="convert()">Submit</button>
+      <h3 id="result"></h3>
     </form>
+    <script src="script.js"></script>
   </body>
 </html>

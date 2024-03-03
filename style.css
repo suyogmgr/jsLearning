@@ -55,3 +55,23 @@ form{
     border-radius: 5px;
     margin-bottom: 15px;
 }
+
+label{
+    font-weight: bold;
+}
+
+#submitBtn{
+    margin-top: 15px;
+    font-size: 1.3rem;
+    padding: 8px 25px;
+    border-radius: 12px;
+    cursor: pointer;
+    border: none;
+    background-color: hsl(0, 32%, 60%);
+    transition: background-color 0.3s;
+}
+
+#submitBtn:hover{
+    background-color: hsl(0, 32%, 65%);
+}
+
