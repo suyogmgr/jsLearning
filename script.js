@@ -178,29 +178,50 @@ while (running) {
 
 // ---------------- Temperature Converter --------------------
 
-const toFarenheit = document.getElementById("toFarenheit");
+/*const toFarenheit = document.getElementById("toFarenheit");
 const toCelsius = document.getElementById("toCelsius");
 const answer = document.getElementById("result");
-const display = document.getElementById("display-box");
+const display = document.getElementById("display-box");*/
 
-let temp;
+// let temp;
 
-function convert() {
+// function convert() {
     
-  if (toFarenheit.checked) {
-    temp = Number(display.value);
-    temp = temp * 9 / 5 + 32;
-    answer.textContent = temp.toFixed(1) + "°F";
-    console.log("F");
-  } 
-  else if (toCelsius.checked) {
-    temp = Number(display.value);
-    temp = (temp - 32) * (5/9);
-    answer.textContent = temp.toFixed(1) + "°C";
-    console.log("C");
-  } 
-  else {
-    answer.textContent = "Select a Unit";
-    console.log("check");
-  }
+//   if (toFarenheit.checked) {
+//     temp = Number(display.value);
+//     temp = temp * 9 / 5 + 32;
+//     answer.textContent = temp.toFixed(1) + "°F";
+//     console.log("F");
+//   } 
+//   else if (toCelsius.checked) {
+//     temp = Number(display.value);
+//     temp = (temp - 32) * (5/9);
+//     answer.textContent = temp.toFixed(1) + "°C";
+//     console.log("C");
+//   } 
+//   else {
+//     answer.textContent = "Select a Unit";
+//     console.log("check");
+//   }
+// }
+
+
+//------------- Dice Roller ----------------
+
+function rollDice(){
+    const numberOfDice = document.getElementById("display-box").value;
+    const diceResult = document.getElementById("diceResult");
+    const diceImage = document.getElementById("diceImage");
+    const values = [];
+    const images = [];
+
+    for(let i = 0; i < numberOfDice; i++){
+      const value = Math.floor(Math.random()*6)+1;
+      values.push(value);
+      images.push(`<img src = "dice_images/${value}.png" alt="dice_images">`);
+
+    }
+
+    diceResult.textContent = `dice ${values.join(", ")}`;
+    diceImage.innerHTML = images.join('');
 }
