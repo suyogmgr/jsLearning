@@ -186,42 +186,117 @@ const display = document.getElementById("display-box");*/
 // let temp;
 
 // function convert() {
-    
+
 //   if (toFarenheit.checked) {
 //     temp = Number(display.value);
 //     temp = temp * 9 / 5 + 32;
 //     answer.textContent = temp.toFixed(1) + "°F";
 //     console.log("F");
-//   } 
+//   }
 //   else if (toCelsius.checked) {
 //     temp = Number(display.value);
 //     temp = (temp - 32) * (5/9);
 //     answer.textContent = temp.toFixed(1) + "°C";
 //     console.log("C");
-//   } 
+//   }
 //   else {
 //     answer.textContent = "Select a Unit";
 //     console.log("check");
 //   }
 // }
 
-
 //------------- Dice Roller ----------------
 
-function rollDice(){
-    const numberOfDice = document.getElementById("display-box").value;
-    const diceResult = document.getElementById("diceResult");
-    const diceImage = document.getElementById("diceImage");
-    const values = [];
-    const images = [];
+// function rollDice(){
+//     const numberOfDice = document.getElementById("display-box").value;
+//     const diceResult = document.getElementById("diceResult");
+//     const diceImage = document.getElementById("diceImage");
+//     const values = [];
+//     const images = [];
 
-    for(let i = 0; i < numberOfDice; i++){
-      const value = Math.floor(Math.random()*6)+1;
-      values.push(value);
-      images.push(`<img src = "dice_images/${value}.png" alt="dice_images">`);
+//     for(let i = 0; i < numberOfDice; i++){
+//       const value = Math.floor(Math.random()*6)+1;
+//       values.push(value);
+//       images.push(`<img src = "dice_images/${value}.png" alt="dice_images">`);
 
+//     }
+
+//     diceResult.textContent = `dice ${values.join(", ")}`;
+//     diceImage.innerHTML = images.join('');
+// }
+
+// -------------- Spread Operator ------------------
+
+// let name = 'suyog';
+
+// let spread = [...name].join("-");
+
+// console.log(spread);
+
+// --------------- Rest Parameters ----------------
+
+// function rest(...restPara){
+//     console.log(...restPara);
+// }
+
+// let a = 'idk';
+// let b = 'ok';
+// let c = 'ido';
+// let d = 'oi';
+
+// rest(a,b,c,d);
+
+// -------------- Random Password Generator -------------------
+
+function passwordGenerator(
+  passwordLength,
+  includeLowerCase,
+  includeUppercase,
+  includeNumbers,
+  includeSymbols
+) {
+
+    const lowerCase = "abcdefghijklmnopqrstuvwxyz";
+    const upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const numbers = "0123456789";
+    const symbols = "£$%^&*()_+-=/|\~#¬";
+
+    let allowedCharacters = "";
+    let password = "";
+
+    allowedCharacters += includeLowerCase ? lowerCase : "";
+    allowedCharacters += includeUppercase ? upperCase : "";
+    allowedCharacters += includeNumbers ? numbers : "";
+    allowedCharacters += includeSymbols ? symbols : "";
+
+    if(passwordLength <= 0){
+        return `(pasword length must be 1)`;
     }
 
-    diceResult.textContent = `dice ${values.join(", ")}`;
-    diceImage.innerHTML = images.join('');
+    if(allowedCharacters === 0){
+        return `(Al least one set of characters need to be selected)`;
+    }
+
+    for(let i = 0; i < passwordLength; i++){
+        const randomIndex = Math.floor(Math.random() * allowedCharacters.length);
+        password += allowedCharacters[randomIndex];
+    }
+
+    return password;
 }
+
+const passwordLength = 8;
+const includeLowerCase = true;
+const includeUppercase = true;
+const includeNumbers = true;
+const includeSymbols = true;
+
+const password = passwordGenerator(
+  passwordLength,
+  includeLowerCase,
+  includeUppercase,
+  includeNumbers,
+  includeSymbols
+);
+
+console.log(`Generated Password: ${password}`);

@@ -77,7 +77,7 @@ label{
 
 /*---------------- Dice Roller ------------------*/
 
-.container{
+/* .container{
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
@@ -93,7 +93,7 @@ label{
     color: #fff;
     border: none;
     background-color: hsl(240, 67%, 50%);
-    /* transition: background-color 0.3s; */
+    transition: background-color 0.3s;
 }
 
 .submit:hover{
@@ -112,4 +112,4 @@ label{
 
 #diceImage img{
     height: 150px;
-}
+} */
