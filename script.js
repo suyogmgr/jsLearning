@@ -248,55 +248,159 @@ const display = document.getElementById("display-box");*/
 
 // -------------- Random Password Generator -------------------
 
-function passwordGenerator(
-  passwordLength,
-  includeLowerCase,
-  includeUppercase,
-  includeNumbers,
-  includeSymbols
-) {
+// function randomPasswordGenerator(
+//     passwordLength, 
+//     includeLowerCase, 
+//     includeUpperCase, 
+//     includeNumber, 
+//     includeSymbols){
+    
+    
 
-    const lowerCase = "abcdefghijklmnopqrstuvwxyz";
-    const upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    const numbers = "0123456789";
-    const symbols = "£$%^&*()_+-=/|\~#¬";
+//     const lowerCaseChars = "abcdefghijklmnopqrstuvwxyz";
+//     const upperCaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+//     const numChars = "0123456789";
+//     const symbolChars = "!£$%^&*()-_+/\|@~#?',><.¬`";
 
-    let allowedCharacters = "";
-    let password = "";
+//     let allowedCharacters ="";
+//     let password ="";
 
-    allowedCharacters += includeLowerCase ? lowerCase : "";
-    allowedCharacters += includeUppercase ? upperCase : "";
-    allowedCharacters += includeNumbers ? numbers : "";
-    allowedCharacters += includeSymbols ? symbols : "";
+//     allowedCharacters += includeLowerCase ? lowerCaseChars : "";
+//     allowedCharacters += includeUpperCase ? upperCaseChars : "";
+//     allowedCharacters += includeNumber ? numChars : "";
+//     allowedCharacters += includeSymbols ? symbolChars : "";
+        
+//     if(passwordLength <= 0){
+//         return `(Your password cannot be empty)`;
+//     }
 
-    if(passwordLength <= 0){
-        return `(pasword length must be 1)`;
+//     if(allowedCharacters === 0){
+//         return `(At least one character should be selected)`;
+//     }
+ 
+//     for(let i = 0; i<passwordLength; i++){
+//         const generatedPassword = Math.floor(Math.random()*allowedCharacters.length);
+//         //console.log(generatedPassword);
+//         password += allowedCharacters[generatedPassword];
+//     }
+
+//     return password;
+// }
+
+// const passwordLength = 8;
+// const includeLowerCase = true;
+// const includeUpperCase = false;
+// const includeNumber = true;
+// const includeSymbols = false;
+
+// const password = randomPasswordGenerator(
+//      passwordLength,
+//      includeLowerCase, 
+//      includeUpperCase, 
+//      includeNumber, 
+//      includeSymbols);
+
+// console.log(password);
+
+//  ----------- CallBacks --------------
+// hello(world);
+
+// function hello(world){
+//     console.log("Hello");
+//     world();
+// }
+
+// function world(){
+//     console.log("World")
+// }
+
+// ----------- ForEach -------------
+
+// let numbers = [1,2,3,4,5,6,7,8];
+
+// numbers.forEach(all);
+
+// function all(element){
+//     console.log(element);
+// }
+
+// ------------ Filter ------------
+
+// let numbers = [1,2,4,5,3,6,7,8,9];
+// let ages = [22,31,11,23,23,12,14,15,19];
+
+// let allowed = ages.filter(adult);
+// console.log(allowed);
+
+// let evenNum = numbers.filter(even);
+// console.log(evenNum);
+
+// let oddNum = numbers.filter(odd);
+// console.log(oddNum);
+
+// function even(element){
+//     return element % 2 === 0;
+// }
+
+// function odd(element){
+//     return element % 2 !== 0;
+// }
+
+// function adult(element){
+//     return element >= 18;
+// }
+
+//---------- Arrow funcitons ----------------
+// setTimeout(function(){
+//     console.log("Hello World");
+// }, 3000);
+
+// const numbers = [1,2,3,4,5,6,7,8,9];
+
+
+// const square = numbers.map(function(element){
+//     return Math.pow(element, 2);
+// });
+
+// const arrowSquare = numbers.map(element => Math.pow(element,2));
+
+// const evenNums = numbers.filter(function(element){
+//     return element % 2 === 0;
+// });
+
+// console.log(arrowSquare);
+// console.log(square);
+// console.log(evenNums);
+
+// ------------------ Objects ----------------
+
+
+// const person = {
+//     firstName: "Suyog",
+//     middleName: "Rana",
+//     lastName: "Magar",
+//     doTheThing:() =>{console.log(`Hey, I'm ${this.firstName}`)},
+// }
+
+// console.log(person.firstName);
+// person.doTheThing();
+
+
+// ---------- Classes --------------
+
+class Person{
+    constructor(name,age){
+        this.name = name;
+        this.age = age;
     }
 
-    if(allowedCharacters === 0){
-        return `(Al least one set of characters need to be selected)`;
+    displayResult(){
+        console.log(`My name is ${this.name}`);
+        console.log(`My age is ${this.age}`);
     }
-
-    for(let i = 0; i < passwordLength; i++){
-        const randomIndex = Math.floor(Math.random() * allowedCharacters.length);
-        password += allowedCharacters[randomIndex];
-    }
-
-    return password;
 }
 
-const passwordLength = 8;
-const includeLowerCase = true;
-const includeUppercase = true;
-const includeNumbers = true;
-const includeSymbols = true;
+let details = new Person("Suyog", 19);
 
-const password = passwordGenerator(
-  passwordLength,
-  includeLowerCase,
-  includeUppercase,
-  includeNumbers,
-  includeSymbols
-);
+details.displayResult();
 
-console.log(`Generated Password: ${password}`);
