@@ -239,7 +239,7 @@ const display = document.getElementById("display-box");*/
 //     console.log(...restPara);
 // }
 
-// let a = 'idk';
+// let a = 'idk';git
 // let b = 'ok';
 // let c = 'ido';
 // let d = 'oi';
@@ -266,6 +266,13 @@ const display = document.getElementById("display-box");*/
 //     let password ="";
 
 //     allowedCharacters += includeLowerCase ? lowerCaseChars : "";
+
+    // if(includeLowerCase === true){
+    //     allowedCharacters += lowerCaseChars; 
+    // }else{
+    //     allowedCharacters += "";
+    // }
+
 //     allowedCharacters += includeUpperCase ? upperCaseChars : "";
 //     allowedCharacters += includeNumber ? numChars : "";
 //     allowedCharacters += includeSymbols ? symbolChars : "";
@@ -274,23 +281,22 @@ const display = document.getElementById("display-box");*/
 //         return `(Your password cannot be empty)`;
 //     }
 
-//     if(allowedCharacters === 0){
+//     if(allowedCharacters <= 0){
 //         return `(At least one character should be selected)`;
 //     }
  
 //     for(let i = 0; i<passwordLength; i++){
 //         const generatedPassword = Math.floor(Math.random()*allowedCharacters.length);
-//         //console.log(generatedPassword);
 //         password += allowedCharacters[generatedPassword];
 //     }
 
 //     return password;
 // }
 
-// const passwordLength = 8;
+// const passwordLength = 2;
 // const includeLowerCase = true;
 // const includeUpperCase = false;
-// const includeNumber = true;
+// const includeNumber = false;
 // const includeSymbols = false;
 
 // const password = randomPasswordGenerator(
@@ -388,19 +394,19 @@ const display = document.getElementById("display-box");*/
 
 // ---------- Classes --------------
 
-class Person{
-    constructor(name,age){
-        this.name = name;
-        this.age = age;
-    }
+// class Person{
+//     constructor(name,age){
+//         this.name = name;
+//         this.age = age;
+//     }
 
-    displayResult(){
-        console.log(`My name is ${this.name}`);
-        console.log(`My age is ${this.age}`);
-    }
-}
+//     displayResult(){
+//         console.log(`My name is ${this.name}`);
+//         console.log(`My age is ${this.age}`);
+//     }
+// }
 
-let details = new Person("Suyog", 19);
+// let details = new Person("Suyog", 19);
 
-details.displayResult();
+// details.displayResult();
 
